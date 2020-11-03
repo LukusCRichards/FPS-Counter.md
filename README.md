@@ -19,6 +19,7 @@ StartCoroutine(RecalculateFPS());
 In the IEnumerator method write the following (or relevent if different):
 
 while (true)
+
 {
    fps = 1 / Time.deltaTime;
    
@@ -30,3 +31,5 @@ In the OnGUI method, write the following (or relevent if different):
 GUI.Label(fpsRect, "FPS: " + string.Format("{0:0.0}", fps), style); // The numbers in curly brackets control the amount of visible numbers ({0:0.0} = 0.0)
 
 ## How to Test the Script
+If you want to see if it works properly when the game loses performance as it plays, you can add a high polly mesh into your project and duplicate it repeatedly so it takes up more performance. Afterwards you can create another script called CameraRotation that makes the camera rotate automatically so you can see when the performance is good and when it is bad.
+
