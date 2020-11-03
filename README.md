@@ -21,15 +21,24 @@ In the IEnumerator method write the following (or relevent if different):
 while (true)
 
 {
+   
    fps = 1 / Time.deltaTime;
    
    yield return new WaitForSeconds(1);
+   
 }
 
 In the OnGUI method, write the following (or relevent if different):
 
 GUI.Label(fpsRect, "FPS: " + string.Format("{0:0.0}", fps), style); // The numbers in curly brackets control the amount of visible numbers ({0:0.0} = 0.0)
 
-## How to Test the Script
-If you want to see if it works properly when the game loses performance as it plays, you can add a high polly mesh into your project and duplicate it repeatedly so it takes up more performance. Afterwards you can create another script called CameraRotation that makes the camera rotate automatically so you can see when the performance is good and when it is bad.
+When you finish writing the script, just make an empty game object and implement the script component into it.
 
+## How to Test the Script
+If you want to see if it works properly when the game loses performance as it plays, you can add a high polly mesh into your project (downloaded or made by yourself) and duplicate it repeatedly so it takes up more performance. Afterwards you can create another script called CameraMovement that makes the camera rotate automatically so you can see when the performance is good and when it is bad.
+
+When you feel like you have made enough duplicates to make a visible difference in the performance, just open the CameraMovement script and create a float for the rotation speed, name it appropriately and give it a speed of **30**. You can delete the start method, but in the Update method write the following (or applicable if different):
+
+transform.Rotate(0.0f, rotationSpeed * Time.deltaTime, 0.0f);
+
+Afterwards, just apply the script component to the main camera where it can see the areas that you think require more processing power and then turns to an area where it plays smoothly.
