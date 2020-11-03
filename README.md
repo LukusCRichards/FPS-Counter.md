@@ -17,9 +17,13 @@ StartCoroutine(RecalculateFPS());
 In the IEnumerator method write the following (or relevent if different):
 
 while (true)
-        {
-            fps = 1 / Time.deltaTime;
-            yield return new WaitForSeconds(1);
-        }
+{
+   fps = 1 / Time.deltaTime;
+   yield return new WaitForSeconds(1);
+}
+
+In the OnGUI method, write the following (or relevent if different):
+
+GUI.Label(fpsRect, "FPS: " + string.Format("{0:0.0}", fps), style); // The numbers in curly brackets control the amount of visible numbers ({0:0.0} = 0.0)
 
 ## How to Test the Script
