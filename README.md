@@ -17,9 +17,9 @@ StartCoroutine(RecalculateFPS());
 In the IEnumerator method write the following (or relevent if different):
 
 while (true)
-{
-    fps = 1 / Time.deltaTime;
-    yeild return new WairForSeconds(1); // How frequent the FPS counter updates
-}
+        {
+            fps = 1 / Time.deltaTime;
+            yield return new WaitForSeconds(1);
+        }
 
 ## How to Test the Script
