@@ -9,7 +9,9 @@ Underneath them, write a **float** variable and name it **fps** with all letters
 In the start method, write the following (or relevent if different):
 
 fspRect = new Rect(100, 100, 400, 100); // Used to calculate the size of the rectangle
+
 style = new GUIStyle();
+
 style.fontSize = 30;
 
 StartCoroutine(RecalculateFPS());
@@ -19,6 +21,7 @@ In the IEnumerator method write the following (or relevent if different):
 while (true)
 {
    fps = 1 / Time.deltaTime;
+   
    yield return new WaitForSeconds(1);
 }
 
